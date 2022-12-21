@@ -21,8 +21,8 @@ def main() :
         st.dataframe( df )
 
         # 만약 unnamed가 있다면 제거 하라
-        if 'Unnamed: 0' in df.columns :
-            df.drop(['Unnamed: 0'], axis = 1, inplace = True)
+        if 'Unnamed:0' in df.columns :
+            df.drop(['Unnamed:0'], axis = 1, inplace = True)
 
         # 결측값 처리
         df = df.dropna()
