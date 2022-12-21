@@ -26,6 +26,7 @@ def main() :
 
         # 결측값 처리
         df = df.dropna()
+        
 
         column_list = df.columns
         selected_columns = st.multiselect('X로 사용할 컬럼을 선택하세요', column_list)
@@ -41,7 +42,7 @@ def main() :
                 print(name)    
                 # 각 컬럼 데이터를 가져온다.
                 data = X[name]
-                
+                data.reset_index(drop=True, inplace=True)
                 # 문자열인지 아닌지 나눠서 처리하면 된다. 
                 if data.dtype == object :
                     
